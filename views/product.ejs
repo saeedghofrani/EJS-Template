@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include("./common/header.ejs") %>
+        <title>فروشگاه مکتب شریف</title>
+        <link rel="stylesheet" href="/style/main.css" />
+</head>
+
+<body class="h-100">
+    <%- include("./common/_navbar_.ejs") %>
+        <section class="p-4">
+            <div class="row g-0">
+                <div class="col-md-4">
+                    <img src="<%= data["image"]%>"class=" rounded-start" alt="...">
+                </div>
+                <div class="col-md-8">
+                    <div class="card-body">
+                        <h4 class="card-title"> <b>
+                                <%= data['title'] %>
+                            </b></h4>
+                        <p class="card-text"> این کفش بسیار بسیار مرغوب است و دارای جنس بسیار خوبی است </p>
+                        <p class="card-text"><small class="text-danger">کفش موجود نمیباشد </small></p>
+                    </div>
+                </div>
+                <div class="card-text mt-4">
+                    <p class="m-0">
+                        سایز:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%= data['size'] %>
+                    </p>
+                    <p class="m-0">
+                        رنگ:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%= data['color'] %>
+                    </p>
+                    <p class="m-0">
+                        جنس:&nbsp;&nbsp;&nbsp;&nbsp;<%= data['material'] %>
+                    </p>
+                </div>
+                <div class="d-flex justify-content-between align-content-center mt-5">
+                    <span class="m-0 pt-2 d-flex columns justify-content-center align-content-center">
+                        <%= data['price'] %>تومان
+                    </span>
+                </div>
+            </div>
+            </div>
+        </section>
+        <%- include("./common/bootstrapScript.ejs") %>
+            <script src="/script/home.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <%- include("./common/header.ejs") %>
+    <title>فروشگاه مکتب شریف</title>
+    <link rel="stylesheet" href="/style/main.css" />
+</head>
+
+<body>
+  <%- include("./common/_navbar_.ejs") %>
+    <h3 id="noMatch" class="d-none text-center text-danger">هیچ موردی یافت نشد</h3>
+    <section class=" p-4 m-2 d-flex row flex-wrap justify-content-center align-content-center">
+      <% for (let i=0; i < data.length; i++) { %>
+        <div id="card<%=i%>" class="pt-3 col-12 col-sm-6 col-md-6 col-lg-4 col-xl-3 cardClass">
+          <div class="card">
+            <img src="<%= data[i]["image"]%>" alt="" class="card-img-top" alt="کفش" />
+            <div class="card-body">
+              <h4 class="card-title justify-content-center text-center">
+                <b>
+                  <%= data[i]['title'] %>
+                </b>
+                </h5>
+                </h5>
+                <div class="card-text mt-4">
+                  <p class="m-0">
+                    سایز:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%= data[i]['size'] %>
+                  </p>
+                  <p class="m-0">
+                    رنگ:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%= data[i]['color'] %>
+                  </p>
+                  <p class="m-0">
+                    جنس:&nbsp;&nbsp;&nbsp;&nbsp;<%= data[i]['material'] %>
+                  </p>
+                </div>
+                <div class="d-flex justify-content-between align-content-center mt-5">
+                  <span class="m-0 pt-2 d-flex columns justify-content-center align-content-center">
+                    <%= data[i]['price'] %>تومان
+                  </span>
+                  <a href="product/<%= i + 1 %>" class="btn btn-primary col-6 rounded-bottom">خرید</a>
+                </div>
+            </div>
+          </div>
+        </div>
+        <% } %>
+    </section>
+    <%- include("./common/bootstrapScript.ejs") %>
+      <script src="/script/home.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include("./common/header.ejs") %>
+        <title>ارتباط با ما</title>
+        <link rel="stylesheet" href="/style/main.css" />
+        <link rel="stylesheet" href="/style/login.css">
+</head>
+
+<body>
+    <%- include("./common/_navbar_.ejs") %>
+        <div class='login-page'>
+            <div class="form">
+                <form class="login-form">
+                    <!-- user input-->
+                    <input type="text" name="username" placeholder="نام و نام خانوادگی" required><br>
+                    <input type="text" name="email" placeholder="ادرس ایمیل" required><br>
+                    <textarea type="message" name="message" placeholder="اتقادات و پیشنهادات" required></textarea><br>
+                    <!-- submit button -->
+                    <input type="submit" value="ارسال">
+                </form>
+            </div>
+        </div>
+        <%- include("./common/bootstrapScript.ejs") %>
+            <script src="/script/home.js"></script>
+</body>
+
+</html>
